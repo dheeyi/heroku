@@ -1,7 +1,4 @@
-const { createServer } = require('http')
-const { parse } = require('url')
 const next = require('next')
-
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
@@ -33,8 +30,7 @@ app.prepare()
                     'data:'
                 ],
                 scriptSrc: [
-                    '\'self\'',
-                    '\'unsafe-eval\''
+                    '\'self\''
                 ],
                 connectSrc: ['\'self\''],
                 styleSrc: [

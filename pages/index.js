@@ -25,9 +25,9 @@ const Home = () => {
     const validate = () => {
         if(
             validateWithSchema(
-                schema,
+                'payloadCity',
                 {
-                    city: "jj"
+                    city: "LPZ"
                 }
             )
         ) {

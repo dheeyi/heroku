@@ -1,6 +1,12 @@
-const Ajv = require('ajv').default;
+import schemasValidation from '../validate_schema'
 
-const validateWithSchema = function (schema, data) {
+const validateWithSchema = function (schemaId, data) {
+
+    return schemasValidation[schemaId](data);
+
+};
+
+const validateWithSchema2 = function (schema, data) {
 
     const ajv = new Ajv();
 
