@@ -1,4 +1,6 @@
 import styles from '../styles/Home.module.css'
+import schema from '../schema/schema.json'
+import {validateWithSchema} from '../enums/tools'
 
 const Home = () => {
     const showPage = () => {
@@ -20,7 +22,22 @@ const Home = () => {
         );
     }
 
-    return showHelloWorld();
+    const validate = () => {
+        if(
+            validateWithSchema(
+                schema,
+                {
+                    city: "jj"
+                }
+            )
+        ) {
+            return showPage()
+        }
+
+        return showHelloWorld()
+    }
+
+    return validate()
 }
 
 export default Home;

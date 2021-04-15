@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "city"
+  ],
+  "properties": {
+    "city": {
+      "type": "string",
+      "enum": ["LPZ"]
+    }
+  }
+}

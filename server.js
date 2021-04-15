@@ -20,7 +20,7 @@ app.prepare()
         strict: true
     });
 
-        server.use(
+    server.use(
         helmet.contentSecurityPolicy({
             directives: {
                 defaultSrc: ['\'self\''],
