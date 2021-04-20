@@ -1,8 +1,13 @@
-import schemasValidation from '../validate_schema'
+const Ajv = require('ajv').default;
+import schemasValidation from '../schema/validationSchemes'
 
 const validateWithSchema = function (schemaId, data) {
 
-    return schemasValidation[schemaId](data);
+    if(schemasValidation[schemaId]) {
+        return schemasValidation[schemaId](data);
+    }
+
+    return false;
 
 };
 
@@ -19,5 +24,6 @@ const validateWithSchema2 = function (schema, data) {
 };
 
 module.exports = {
-    validateWithSchema
+    validateWithSchema,
+    validateWithSchema2
 };

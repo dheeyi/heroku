@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
-import schema from '../schema/schema.json'
-import {validateWithSchema} from '../enums/tools'
+import schema from '../schema/source/schema1.json'
+import {validateWithSchema, validateWithSchema2} from '../enums/tools'
 
 const Home = () => {
     const showPage = () => {

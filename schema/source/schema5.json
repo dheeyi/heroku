@@ -1,0 +1,107 @@
+{
+  "$id":"listCardResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "listCards"
+  ],
+  "properties": {
+    "listCards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "order",
+          "bankingProduct",
+          "headFeature",
+          "productFeature",
+          "specialFeatures"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bankingProduct": {
+            "type": "object",
+            "required": [
+              "productIdentification",
+              "productTypeDescription",
+              "productImage"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "productIdentification": {
+                "type": "string",
+                "minLength": 1
+              },
+              "productTypeDescription":{
+                "type": "string",
+                "minLength": 1
+              },
+              "productImage":{
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              }
+            }
+          },
+          "headFeature": {
+            "type": "string",
+            "minLength": 1
+          },
+          "productFeature": {
+            "type": "array",
+            "minItems":1,
+            "items": {
+              "type": "object",
+              "required": [
+                "description",
+                "iconName"
+              ],
+              "additionalProperties": true,
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "iconName": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "specialFeatures": {
+            "type": "object",
+            "required": [
+              "amount",
+              "currencyFeature"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "amount": {
+                "type": "integer"
+              },
+              "currencyFeature": {
+                "type": "object",
+                "required": [
+                  "alias"
+                ],
+                "additionalProperties": true,
+                "properties":{
+                  "alias": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

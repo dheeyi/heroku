@@ -6,11 +6,14 @@ const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 
-const dev = process.env.NODE_ENV !== 'production'
+// const dev = process.env.NODE_ENV !== 'production'
+const dev = false
 const app = next({ dev })
 const handler = app.getRequestHandler()
 
-app.prepare()
+const { builder } = require('./schema/builder/devMode');
+
+Promise.all([builder(dev), app.prepare()])
     .then(() => {
 
     const server = express({

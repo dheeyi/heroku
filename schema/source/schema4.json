@@ -1,0 +1,156 @@
+{
+  "$id":"accountResponse",
+  "type": "object",
+  "required": [
+    "customerProduct",
+    "productsAndServices"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "customerProduct": {
+      "type": "object",
+      "required": [
+        "bankCustomer",
+        "bankParty"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bankCustomer": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "bankParty": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      }
+    },
+    "productsAndServices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "productType",
+          "productTypeDescription",
+          "productIdentification",
+          "productNumber",
+          "displayNumber",
+          "productState",
+          "productManageType",
+          "productImage",
+          "currencyProduct"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "productType": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "productTypeDescription": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "productIdentification": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "productNumber": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "displayNumber": {
+            "type": "object",
+            "required": [
+              "formatedNumber",
+              "maskedNumber"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "formatedNumber": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "maskedNumber": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            }
+          },
+          "productState": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "productManageType": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "productImage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "currencyProduct": {
+            "type": "object",
+            "required": [
+              "alias",
+              "alphaCode",
+              "currencyName",
+              "secondAlias",
+              "numericCode",
+              "subUnit",
+              "symbol"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "alias": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "alphaCode": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 128
+              },
+              "currencyName": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 128
+              },
+              "secondAlias": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "numericCode": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "subUnit": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "symbol": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
