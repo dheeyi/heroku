@@ -1,0 +1,14 @@
+{
+  "$id": "processOwnershipRoute",
+  "type": "object",
+  "required": [
+    "processCode"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "processCode": {
+      "type": "string",
+      "minLength": 6
+    }
+  }
+}

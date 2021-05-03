@@ -1,0 +1,13 @@
+{
+  "$id": "verificatorRegisterSignature",
+  "type": "object",
+  "required": [
+    "sended"
+  ],
+  "properties": {
+    "sended": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

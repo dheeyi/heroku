@@ -1,0 +1,408 @@
+{
+  "$id": "configurationServerEnvironment",
+  "type": "object",
+  "required": [
+    "INTERFACE",
+    "SERVER"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "INTERFACE": {
+      "type": "object",
+      "required": [
+        "STATIC_FILE_SERVER",
+        "SSR_SERVER",
+        "GOOGLE_API_KEY",
+        "RECONNECTION",
+        "ENTERPRISE"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "STATIC_FILE_SERVER": {
+          "type": "object",
+          "required": [
+            "URL"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "URL": {
+              "type": "string",
+              "pattern": "^(http(s?):\/\/)"
+            }
+          }
+        },
+        "SSR_SERVER": {
+          "type": "object",
+          "required": [
+            "URL"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "URL": {
+              "type": "string",
+              "pattern": "^(http(s?):\/\/)"
+            }
+          }
+        },
+        "GOOGLE_API_KEY": {
+          "type": "string",
+          "minLength": 39
+        },
+        "RECONNECTION": {
+          "type": "object",
+          "required": [
+            "TIMER"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "TIMER": {
+              "type": "integer",
+              "minimum": 10
+            }
+          }
+        },
+        "ENTERPRISE": {
+          "type": "object",
+          "required": [
+            "NAME",
+            "SITE",
+            "PRODUCT",
+            "TITLE",
+            "DESCRIPTION",
+            "IMAGE",
+            "CONTRACTS"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "NAME": {
+              "type": "string",
+              "minLength": 5
+            },
+            "SITE": {
+              "type": "string",
+              "pattern": "^(http(s?):\/\/)"
+            },
+            "PRODUCT": {
+              "type": "object",
+              "required": [
+                "NAME"
+              ],
+              "properties": {
+                "NAME": {
+                  "type": "string",
+                  "minLength": 5
+                }
+              }
+            },
+            "TITLE": {
+              "type": "string",
+              "minLength": 10
+            },
+            "DESCRIPTION": {
+              "type": "string",
+              "minLength": 100
+            },
+            "IMAGE": {
+              "type": "object",
+              "required": [
+                "URL",
+                "ALT"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "URL": {
+                  "type": "string",
+                  "pattern": "^(http(s?):\/\/)"
+                },
+                "ALT": {
+                  "type": "string",
+                  "minLength": 10
+                }
+              }
+            },
+            "CONTRACTS": {
+              "type": "object",
+              "required": [
+                "CREDIT_CARD"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "CREDIT_CARD": {
+                  "type": "object",
+                  "required": [
+                    "URL"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "URL": {
+                      "type": "string",
+                      "pattern": "^(http(s?):\/\/)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "SERVER": {
+      "type": "object",
+      "required": [
+        "GATEWAY",
+        "THIRD_PARTIES",
+        "SIGNATURE",
+        "TRANSFER_LIMIT",
+        "TIMEOUT",
+        "TRACEABILITY",
+        "DOMAIN",
+        "SECURITY"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "GATEWAY": {
+          "type": "object",
+          "required": [
+            "URL"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "URL": {
+              "type": "string",
+              "pattern": "^(http(s?):\/\/)"
+            }
+          }
+        },
+        "THIRD_PARTIES": {
+          "type": "object",
+          "required": [
+            "SIGN_IN",
+            "VALIDATE_SECURITY_DEVICE"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "SIGN_IN": {
+              "type": "object",
+              "required": [
+                "URL"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "URL": {
+                  "type": "string",
+                  "pattern": "^(http(s?):\/\/)"
+                }
+              }
+            },
+            "VALIDATE_SECURITY_DEVICE": {
+              "type": "object",
+              "required": [
+                "URL"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "URL": {
+                  "type": "string",
+                  "pattern": "^(http(s?):\/\/)"
+                }
+              }
+            }
+          }
+        },
+        "SIGNATURE": {
+          "type": "object",
+          "required": [
+            "URL"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "URL": {
+              "type": "string",
+              "pattern": "^(http(s?):\/\/)"
+            }
+          }
+        },
+        "TRANSFER_LIMIT": {
+          "type": "string",
+          "minLength": 3
+        },
+        "TIMEOUT": {
+          "type": "integer",
+          "minimum": 180
+        },
+        "TRACEABILITY": {
+          "type": "object",
+          "required": [
+            "SERVICE",
+            "COLLECTOR"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "SERVICE": {
+              "type": "object",
+              "required": [
+                "NAME"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "NAME": {
+                  "type": "string",
+                  "minLength": 5
+                }
+              }
+            },
+            "COLLECTOR": {
+              "type": "object",
+              "required": [
+                "URL"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "URL": {
+                  "type": "string",
+                  "pattern": "^(http(s?):\/\/)"
+                }
+              }
+            }
+          }
+        },
+        "DOMAIN": {
+          "type": "object",
+          "required": [
+            "ALLOWED"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "ALLOWED": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "*"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^(http(s?):\/\/)"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "SECURITY": {
+          "type": "object",
+          "required": [
+            "SESSION",
+            "POLICIES"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "SESSION": {
+              "type": "object",
+              "required": [
+                "IDENTIFIER",
+                "SECRET",
+                "MAX_INACTIVITY",
+                "STORAGE"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "IDENTIFIER": {
+                  "type": "string",
+                  "minLength": 9,
+                  "maxLength": 9
+                },
+                "SECRET": {
+                  "type": "string",
+                  "minLength": 64,
+                  "maxLength": 64
+                },
+                "MAX_INACTIVITY": {
+                  "type": "integer",
+                  "minimum": 180000
+                },
+                "STORAGE": {
+                  "type": "object",
+                  "required": [
+                    "HOST",
+                    "PORT",
+                    "PASSWORD"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "HOST": {
+                      "type": "string",
+                      "minLength": 8
+                    },
+                    "PORT": {
+                      "type": "integer",
+                      "minimum": 6000
+                    },
+                    "PASSWORD": {
+                      "type": "string",
+                      "minLength": 32,
+                      "maxLength": 32
+                    }
+                  }
+                }
+              }
+            },
+            "POLICIES": {
+              "type": "object",
+              "required": [
+                "ALLOWED"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "ALLOWED": {
+                  "type": "object",
+                  "required": [
+                    "FONTS",
+                    "IMAGES",
+                    "SCRIPTS",
+                    "STYLES"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "FONTS": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^(http(s?):\/\/)"
+                      }
+                    },
+                    "IMAGES": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^(http(s?):\/\/)"
+                      }
+                    },
+                    "SCRIPTS": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^(http(s?):\/\/)"
+                      }
+                    },
+                    "STYLES": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^(http(s?):\/\/)"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

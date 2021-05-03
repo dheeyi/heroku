@@ -1,5 +1,5 @@
 {
-  "$id":"listCardResponse",
+  "$id": "acquiredCardPayload",
   "type": "object",
   "additionalProperties": false,
   "required": [

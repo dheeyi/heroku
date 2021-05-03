@@ -1,0 +1,98 @@
+{
+  "$id": "creditCardRoute",
+  "type": "object",
+  "required": [
+    "processCode",
+    "city",
+    "paymentType",
+    "accountIdentification",
+    "acceptedTermsAndCondition",
+    "creditCard",
+    "sendAddress"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "processCode": {
+      "type": "string",
+      "minLength": 6
+    },
+    "city": {
+      "type": "string",
+      "enum": ["LPZ", "ALT", "SCZ", "CBB", "SUC", "TAR", "ORU", "PTS", "COB", "TRI"]
+    },
+    "paymentType": {
+      "type": "string",
+      "enum": ["MINIMUM_PAYMENT", "TOTAL_PAYMENT"]
+    },
+    "accountIdentification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptedTermsAndCondition": {
+      "type": "boolean"
+    },
+    "creditCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "identification": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "order",
+        "identification"
+      ]
+    },
+    "sendAddress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "livesIn": {
+          "type": "string",
+          "enum": ["Casa", "Edificio"]
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1
+        },
+        "number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geolocation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "latitude",
+            "longitude"
+          ]
+        }
+      },
+      "required": [
+        "livesIn",
+        "address",
+        "number",
+        "reference",
+        "geolocation"
+      ]
+    }
+  }
+}

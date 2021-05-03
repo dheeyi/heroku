@@ -1,0 +1,13 @@
+{
+  "$id": "checkListGateway",
+  "type": "object",
+  "required": [
+    "blocked"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "blocked": {
+      "type": "boolean"
+    }
+  }
+}

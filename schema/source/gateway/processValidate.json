@@ -1,0 +1,14 @@
+{
+  "$id": "processValidateGateway",
+  "type": "object",
+  "required": [
+    "isValid"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "isValid": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

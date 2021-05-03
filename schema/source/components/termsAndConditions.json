@@ -1,5 +1,5 @@
 {
-  "$id": "termsAndConditionsResponse",
+  "$id": "termsAndConditionsPayload",
   "type": "object",
   "required": [
     "creditCard",

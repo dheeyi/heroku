@@ -1,0 +1,36 @@
+{
+  "$id": "secondFactorLoginTypesSecurity",
+  "type": "object",
+  "required": [
+    "body"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "body": {
+      "type": "object",
+      "required": [
+        "loginDevice"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "loginDevice": {
+          "type": "object",
+          "required": [
+            "valueName"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "valueName": {
+              "type": "string",
+              "enum": [
+                "smsToken",
+                "emailToken",
+                "softToken"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

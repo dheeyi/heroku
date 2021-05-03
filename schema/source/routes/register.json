@@ -1,0 +1,14 @@
+{
+  "$id": "registerRoute",
+  "type": "object",
+  "required": [
+    "channel"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "channel": {
+      "type": "string",
+      "enum": ["sms", "email"]
+    }
+  }
+}

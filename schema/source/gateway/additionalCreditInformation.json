@@ -1,0 +1,13 @@
+{
+  "$id": "additionalCreditInformationGateway",
+  "type": "object",
+  "required": [
+    "debts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "debts": {
+      "type": "array"
+    }
+  }
+}

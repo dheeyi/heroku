@@ -1,5 +1,5 @@
 {
-  "$id":"accountResponse",
+  "$id": "accountGateway",
   "type": "object",
   "required": [
     "customerProduct",

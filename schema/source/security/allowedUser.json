@@ -1,0 +1,14 @@
+{
+  "$id": "allowedUserSecurity",
+  "type": "object",
+  "required": [
+    "included"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "included": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}
