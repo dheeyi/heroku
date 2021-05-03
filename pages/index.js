@@ -1,5 +1,4 @@
 import styles from '../styles/Home.module.css'
-import { validateWithSchema } from '../enums/tools'
 
 const Home = () => {
     const showPage = () => {
@@ -11,32 +10,8 @@ const Home = () => {
             </main>
         )
     }
-    const showHelloWorld = () => {
-        return(
 
-            <main className={styles.main}>
-                <p className={styles.description}>hello world!!!</p>
-            </main>
-
-        );
-    }
-
-    const validate = () => {
-        if(
-            validateWithSchema(
-                'payloadCity',
-                {
-                    city: "LPZ"
-                }
-            )
-        ) {
-            return showPage()
-        }
-
-        return showHelloWorld()
-    }
-
-    return validate()
+    return showPage()
 }
 
 export default Home;

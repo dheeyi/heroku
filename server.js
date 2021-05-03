@@ -81,7 +81,7 @@ Promise.all([builder(dev), app.prepare()])
         '3030',
         (errors) => {
 
-            console.info('3030 ip');
+            console.info('running on http://localhost:3030');
 
         }
     );

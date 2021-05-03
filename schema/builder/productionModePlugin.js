@@ -4,14 +4,13 @@ class ProductionModePlugin {
     apply(compiler) {
 
         compiler.hooks.beforeRun.tapPromise(
-            'ProductionModePlugin', 
+            'ProductionModePlugin',
             () => {
 
             return new Promise((resolve, reject) => {
 
-                console.log('pluginnn');
                 exec(
-                    'ajv compile -s "schema/source/*/*.json" -o "schema/validationSchemes.js"',
+                    'ajv compile -s "schema/**/*.json" -o "schema/validationSchemes.js"',
                     (errors) => {
 
                         if (errors) {

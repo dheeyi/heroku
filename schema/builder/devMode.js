@@ -5,7 +5,7 @@ const devMode = function (devMode) {
 
         if(devMode) {
 
-            exec('ajv compile -s "schema/source/*/*.json" -o "schema/validationSchemes.js"',
+            exec('ajv compile -s "schema/**/*.json" -o "schema/validationSchemes.js"',
                 (errors) => {
 
                     if (errors) {
