@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 
 const dev = process.env.NODE_ENV !== 'production'
+const port = process.env.PORT || 3030
 const app = next({ dev })
 const handler = app.getRequestHandler()
 
@@ -78,7 +79,7 @@ Promise.all([builder(dev), app.prepare()])
     server.use(handler);
 
     server.listen(
-        '3030',
+        port,
         (errors) => {
 
             console.info('running on http://localhost:3030');
