@@ -2,6 +2,10 @@
   "name": "heroku-example",
   "version": "0.1.0",
   "private": false,
+  "cacheDirectories": [
+    "node_modules/",
+    ".next/cache/"
+  ],
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -21,10 +25,6 @@
     "cors": "^2.8.5",
     "helmet": "^4.4.1"
   },
-  "cacheDirectories": [
-    "node_modules/",
-    ".next/cache/"
-  ],
   "engines": {
     "node": "14.15.1"
   }
