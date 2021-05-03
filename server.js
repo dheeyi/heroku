@@ -6,8 +6,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 
-const dev = process.env.NODE_ENV !== 'production'
-const port = process.env.PORT || 3030
+const dev = false
+const port = 3030
 const app = next({ dev })
 const handler = app.getRequestHandler()
 
