@@ -21,6 +21,10 @@
     "cors": "^2.8.5",
     "helmet": "^4.4.1"
   },
+  "cacheDirectories": [
+    "node_modules/",
+    ".next/cache/"
+  ],
   "engines": {
     "node": "14.15.1"
   }
