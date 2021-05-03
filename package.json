@@ -1,10 +1,10 @@
 {
   "name": "heroku-example",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": false,
   "cacheDirectories": [
-    "node_modules/",
-    ".next/cache/"
+    "node_modules",
+    ".next/cache"
   ],
   "scripts": {
     "dev": "node server.js",
@@ -26,6 +26,6 @@
     "helmet": "^4.4.1"
   },
   "engines": {
-    "node": "14.15.1"
+    "node": "12.13.0"
   }
 }
